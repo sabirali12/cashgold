@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const endpoint = process.https://newzcount.com/graphql. as string;
+	const endpoint = process.GRAPHQL_ENDPOINT="https://newzcount.com/graphql/". as string;
 	const graphQLClient = new GraphQLClient(endpoint);
 	const referringURL = ctx.req.headers?.referer || null;
 	const pathArr = ctx.query.postpath as Array<string>;
@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://newzcount.com/` + encodeURI(path as string)
+					GRAPHQL_ENDPOINT="https://wordpressite.com/graphql/" + encodeURI(path as string)
 				}`,
 			},
 		};
